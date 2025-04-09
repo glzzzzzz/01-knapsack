@@ -16,18 +16,24 @@ class KnapsackInstance:
     @staticmethod
     def from_string(string: str) -> "KnapsackInstance":
         """ """
-        W: list[int] = []
-        V: list[int] = []
-        C: int = 0
+        number_items, weight_limit, data = load_instance_data(filename)
+
+        W: list[int] = [object[0] for object in data]
+        V: list[int] = [object[1] for object in data]
+        C: int = weight_limit
 
         return KnapsackInstance(W, V, C)
 
     @staticmethod
     def load_instance_data(instance_name: str) -> str:
-        filename = f'../test_instances/low-dimensional/{instance_name}'
+
+        filename = f'../test_instances/{instance_name}'
         with open(filename) as file:
-            lines = [line.rstrip() for line in file]
-        return 
+            number_items, weight_limit = file.readline().split()
+            data = [line for line in file]
+        
+        
+        return number_items, weight_limit, data
 
     @staticmethod
     def test_instance() -> str:

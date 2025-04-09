@@ -25,6 +25,7 @@ class BruteforceKnapsackSolver(KnapsackSolver):
     
     def solve(self) -> tuple[int, ...]:
         # solve by brute force
-        sol = (0,)
+
+            
         
         return sol
