@@ -18,9 +18,9 @@ class KnapsackInstance:
         """ """
         number_items, weight_limit, data = load_instance_data(filename)
 
-        W: list[int] = [object[0] for object in data]
-        V: list[int] = [object[1] for object in data]
-        C: int = weight_limit
+        W: list[int] = [int(object[0]) for object in data]
+        V: list[int] = [int(object[1]) for object in data]
+        C: int = int(weight_limit)
 
         return KnapsackInstance(W, V, C)
 
