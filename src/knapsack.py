@@ -24,7 +24,10 @@ class KnapsackInstance:
 
     @staticmethod
     def load_instance_data(instance_name: str) -> str:
-        return ''
+        filename = f'../test_instances/low-dimensional/{instance_name}'
+        with open(filename) as file:
+            lines = [line.rstrip() for line in file]
+        return 
 
     @staticmethod
     def test_instance() -> str:
